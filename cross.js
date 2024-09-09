@@ -18,12 +18,12 @@
 const BLOCK = ".";
 const DASH = "-";
 const BLANK = " ";
-const ACROSS = "across";
-const DOWN = "down";
+const ACROSS = "Horizontal";
+const DOWN = "Vertical";
 const DEFAULT_SIZE = 15;
 const DEFAULT_SUNDAY_SIZE = 21;
 const DEFAULT_TITLE = "Untitled";
-const DEFAULT_AUTHOR = "Anonymous";
+const DEFAULT_AUTHOR = "Silvinho da Cruz";
 const DEFAULT_CLUE = "(blank clue)";
 const DEFAULT_NOTIFICATION_LIFETIME = 10; // in seconds
 
@@ -186,6 +186,9 @@ class Toolbar {
   constructor(id) {
     this.id = id;
     this.buttons = { // rewrite this programmatically
+      "newPuzzleBreve": new Button("new-grid-mini"),
+      "newPuzzleBreve": new Button("new-grid-breve"),
+      "newPuzzlePadrao": new Button("new-grid-padrao"),
       "newPuzzle15": new Button("new-grid-15"),
       "newPuzzle21": new Button("new-grid-21"),
       "newPuzzleCustom": new Button("new-grid-custom"),

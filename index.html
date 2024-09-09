@@ -1,4 +1,4 @@
-<html>
+<html data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
@@ -12,7 +12,7 @@
     <h1><span id="puzzle-title" class="editable" contenteditable="true"
       onkeydown="suppressEnterKey(event)" onfocusout="setTitle()">Untitled</span>
      by <span id="puzzle-author" class="editable" contenteditable="true"
-      onkeydown="suppressEnterKey(event)" onfocusout="setAuthor()">Anonymous</span></h1>
+      onkeydown="suppressEnterKey(event)" onfocusout="setAuthor()">Silvinho da Cruz</span></h1>
   </div>
 
   <div id="toolbar">
@@ -20,15 +20,31 @@
     <div class="section">
       <div id="new-grid-menu" class="menu hidden" onmouseleave="hideMenu(event)">
         <h4>New blank puzzle:</h4>
-        <button id="new-grid-15" class="default" type="button" data-tooltip="NYT daily (15×15)" onmouseup="setDefault(event)" onclick="createNewPuzzle(15,15)">
+        
+        <button id="new-grid-mini" class="default" type="button" data-tooltip="Mini (5x5)" onmouseup="setDefault(event)" onclick="createNewPuzzle(5,5)">
           <i class="fa fa-plus fa-fw" aria-hidden="true"></i>
         </button>
+        
+        <button id="new-grid-breve" class="default" type="button" data-tooltip="Breve (10×8)" onmouseup="setDefault(event)" onclick="createNewPuzzle(10,8)">
+          <i class="fa fa-plus fa-fw" aria-hidden="true"></i>
+        </button>
+
+        <button id="new-grid-padrao" class="default" type="button" data-tooltip="Padrão (15×10)" onmouseup="setDefault(event)" onclick="createNewPuzzle(15,10)">
+          <i class="fa fa-plus fa-fw" aria-hidden="true"></i>
+        </button>
+
+        <button id="new-grid-15" type="button" data-tooltip="NYT daily (15×15)" onmouseup="setDefault(event)" onclick="createNewPuzzle(15,15)">
+          <i class="fa fa-plus fa-fw" aria-hidden="true"></i>
+        </button>
+
         <button id="new-grid-21" type="button" data-tooltip="NYT Sunday (21×21)" onmouseup="setDefault(event)" onclick="createNewPuzzle(21,21)">
           <i class="fa fa-plus fa-fw" aria-hidden="true"></i>
         </button>
+
         <button id="new-grid-custom" type="submit" data-tooltip="Custom:" form="custom-grid-form" onmouseup="setDefault(event)">
           <i class="fa fa-plus fa-fw" aria-hidden="true"></i>
         </button>
+
         <form id="custom-grid-form" action="javascript:void(0);" onsubmit="createNewCustomPuzzle()">
           <input type="number" name="custom-rows" id="custom-rows" min=1 max=35>
           ×
