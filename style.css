@@ -31,10 +31,10 @@
   --tertiary-color: rgb(116, 123, 133);
   --quaternary-color: rgb(27, 29, 35);
   --shade-color: rgb(96, 103, 116);
-  --highlight-color: rgba(89, 147, 255, 0.6);
+  --highlight-color: rgba(0, 0, 0, 0.6);
   --highlight-active-color: rgba(90, 135, 220, 0.4);
   --highlight-border-color: rgb(61, 61, 227);
-  --highlight-heavy-color: rgb(50, 50, 255);
+  --highlight-heavy-color: rgb(100, 100, 255);
   --highlight-mono-color: rgba(62, 68, 80, 0.7);
   --highlight-active-mono-color: rgba(62, 68, 80, 0.5);
   --highlight-heavy-mono-color: rgb(58, 63, 74);
