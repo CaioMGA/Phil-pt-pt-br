@@ -392,7 +392,7 @@ let xw = new Crossword(); // model
 let current = new Interface(xw.rows, xw.cols); // view-controller
 current.update();
 if (localStorage.getItem("theme") == "dark") toggleDarkMode();
-let actionTimeline = new ActionTimeline();
+var actionTimeline = new ActionTimeline();
 
 //____________________
 // F U N C T I O N S
