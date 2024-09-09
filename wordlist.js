@@ -25,7 +25,9 @@ let wordlist = [
   [], [], [], [], [], []
 ];
 
-openDefaultWordlist("https://raw.githubusercontent.com/jmviz/Phil/master/wordlists/peter-broda-wordlist__unscored.txt");
+// openDefaultWordlist("https://raw.githubusercontent.com/jmviz/Phil/master/wordlists/peter-broda-wordlist__unscored.txt");
+// openDefaultWordlist("wordlists/WL_SP.txt");
+openDefaultLocalWordlist();
 
 let acrossMatchList = document.getElementById("across-matches");
 let downMatchList = document.getElementById("down-matches");
@@ -123,6 +125,25 @@ function openDefaultWordlist(url) {
     } else {}
   };
   textFile.send(null);
+}
+
+function openDefaultLocalWordlist() {
+  fetch('wordlists/WL-SP-clean.txt')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.text();
+    })
+    .then(text => {
+      const words = text.split(/\s/g);
+      addToWordlist(words);
+      sortWordlist();
+      console.log("Loaded default wordlist from local file.");
+    })
+    .catch(error => {
+      console.error('There has been a problem with your fetch operation:', error);
+    });
 }
 
 function removeWordlistDuplicates() {
